@@ -117,14 +117,93 @@ select round(price, 0) from fake_apps; -- this will round the number to it nears
 
 select round(avg(price), 2) from fake_apps;
 
--- group by |
+-- group by 1
 
 select price, count(*) from fake_apps where downloads > 20000 group by price ;
 
 -- remmeber The GROUP BY statement comes after any WHERE statements, but before ORDER BY or LIMIT.
 
+-- the group by will group columns the way it works is that it will find columns with the same name or VALUE
+-- and make them one 
+
 select category, sum(downloads) from fake_apps group by category;
 
--- group by ||
+-- group by 2
 
-½
+-- this works the same way as group by 1 the only difference is that you group two colums instead of just one
+
+-- HAVING
+
+SELECT price, 
+   ROUND(AVG(downloads)),
+   COUNT(*)
+FROM fake_apps
+GROUP BY price
+having count(*) > 10;
+
+-- When we want to limit the results of a query based on values of the individual rows, use WHERE.
+-- When we want to limit the results of a query based on an aggregate property, use HAVING
+
+-- combining TABLES
+
+select * from orders join subscriptions on orders.subscription_id = subscriptions.subscription_id;
+
+-- inner join
+
+select count(*) from newspaper;
+
+select count(*) from online;
+
+select count(*) from newspaper join online on newspaper.id = online.id;
+
+-- left join
+
+select * from newspaper left join online on newspaper.id = online.id;
+
+select * from newspaper left join online on newspaper.id = online.id WHERE online.id IS NULL;
+
+-- Primary Key vs Foreign Key
+
+-- Suppose Columbia University has two tables in their database:
+-- The classes table contains information on the classes that the school offers. Its primary key is id.
+-- The students table contains information on all students in the school. Its primary key is id. It contains the foreign key class_id, which corresponds to the primary key of classes.
+-- Perform an inner join of classes and students using the primary and foreign keys described above, and select all the columns.
+
+select * from classes join students on students.class_id = classes.id;
+
+-- cross join
+
+SELECT month, 
+  COUNT(*)
+FROM newspaper
+CROSS JOIN months
+WHERE start_month <= month 
+  AND end_month >= month
+GROUP BY month;
+
+-- UNION
+
+select * 
+from newspaper
+union
+select * 
+from online;
+
+-- remmeber:
+-- SQL has strict rules for appending data:
+-- Tables must have the same number of columns.
+-- The columns must have the same data types in the same order as the first table.
+
+-- with
+
+with previous_query AS(
+  SELECT customer_id,
+   COUNT(subscription_id) AS 'subscriptions'
+FROM orders
+GROUP BY customer_id
+)
+
+select customers.customer_name, previous_query.subscriptions
+from previous_query join customers on customers.customer_id = previous_query.customer_id;
+
+-- this will kind of create a new table for you. a new temporary table
