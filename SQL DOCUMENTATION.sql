@@ -207,3 +207,4 @@ select customers.customer_name, previous_query.subscriptions
 from previous_query join customers on customers.customer_id = previous_query.customer_id;
 
 -- this will kind of create a new table for you. a new temporary table
+
