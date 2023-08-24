@@ -75,3 +75,19 @@ select CURRENT_TIMESTAMP
 -- START TIME (2023-08-24 13:26:50.297) || STOP TIME (2023-08-24 13:26:50.520)
 
 CREATE INDEX INDEXNAME ON Random( ID, RandomNumber);
+
+
+-- STORE PROCEDURE
+-- This one is to Get RandomNumber By ID
+CREATE PROCEDURE GetRandomNumberByID(@sp_ID INT)
+AS
+BEGIN
+    SELECT RandomNumber FROM Random WHERE ID = @sp_ID
+END
+
+-- This one is to Get IDs By RandomNumber
+CREATE PROCEDURE GetIDsByRandomNumber(@sp_RandomNumber INT)
+AS
+BEGIN
+    SELECT ID FROM Random WHERE RandomNumber = @sp_RandomNumber
+END
