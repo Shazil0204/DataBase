@@ -1,0 +1,7 @@
+C:\Users\Shaz0184\Desktop\Github\DataBase\2. SQL Server Import\RandomNumberGenerator\RandomNumberGenerator\bin\Debug\RandomNumberGenerator.exe.config
+C:\Users\Shaz0184\Desktop\Github\DataBase\2. SQL Server Import\RandomNumberGenerator\RandomNumberGenerator\bin\Debug\RandomNumberGenerator.exe
+C:\Users\Shaz0184\Desktop\Github\DataBase\2. SQL Server Import\RandomNumberGenerator\RandomNumberGenerator\bin\Debug\RandomNumberGenerator.pdb
+C:\Users\Shaz0184\Desktop\Github\DataBase\2. SQL Server Import\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.csproj.AssemblyReference.cache
+C:\Users\Shaz0184\Desktop\Github\DataBase\2. SQL Server Import\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.csproj.CoreCompileInputs.cache
+C:\Users\Shaz0184\Desktop\Github\DataBase\2. SQL Server Import\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.exe
+C:\Users\Shaz0184\Desktop\Github\DataBase\2. SQL Server Import\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.pdb
