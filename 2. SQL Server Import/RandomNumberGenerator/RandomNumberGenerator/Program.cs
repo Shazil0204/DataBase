@@ -22,22 +22,61 @@ namespace RandomNumberGenerator
 
             //Console.ReadKey();
 
-            RandomNumberGenerator();
+            MainController();
 
         }
 
         #region Model
 
+        /// <summary>
+        /// through this method i will connect to the database and 
+        /// </summary>
+        static void DBPerformance()
+        {
+            string connString = @"Data Source=ZBC-S-SHAZ0184;Initial Catalog=Performance;User ID=PerformanceLogin;Password=PerformanceLogin;Integrated Security=True";
+
+            SqlConnection conn = new SqlConnection(connString);
+
+            conn.Open();
+
+            UserOption(connString, conn);
+
+        }
+
         #endregion
 
         #region View
+
+        static void MainView()
+        {
+            Console.WriteLine("Hello and Welcome to Our SQL and C# Combine Program!\n" +
+                "you have two options here\n" +
+                "1.\tFind the RandomNumber using an ID Number\n" +
+                "2.\tFind All the ID's using a RandomNummber\n");
+        }
 
         #endregion
 
         #region Controller
 
+
+        static void MainController()
+        {
+            DBPerformance();
+
+            MainView();
+        }
+
+        static void UserOption(string connectionstring, SqlConnection sqlconn)
+        {
+
+        }
+
+
+
         /// <summary>
         /// This will generate 1 million numbers with random number between 0, 9999 and will create a txt file and add them there.
+        /// The reason why this method is not being used is because i have already used it.
         /// </summary>
         static void RandomNumberGenerator()
         {
