@@ -11,3 +11,6 @@
    - Combining SQL and C#
    - Cinema.sql
    - RDS diagram
+3. C# Program
+   - Combining SQL and C#
+   - RandomNumberGenerator
